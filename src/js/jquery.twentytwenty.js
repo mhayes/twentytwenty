@@ -64,15 +64,15 @@ var TT = require('./core.js');
         .on('mousedown touchstart', function(e) {
           isActive = true;
           container.addClass('active');
-          adjustContainerOnSwipe(e);
+          adjustContainerOnSwipe(e.originalEvent);
         })
         .on('mousemove touchmove', function(e) {
           if (isActive) {
-            adjustContainerOnSwipe(e);
+            adjustContainerOnSwipe(e.originalEvent);
           }
         })
         .on('mouseup touchend', function(e) {
-          adjustContainerOnSwipe(e);
+          adjustContainerOnSwipe(e.originalEvent);
           container.removeClass('active');
           isActive = false;
         });
