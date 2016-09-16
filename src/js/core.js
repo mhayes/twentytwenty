@@ -28,7 +28,7 @@ define([], function() {
    * @returns {Object} Contains the x,y coordinates of the event
    */
   var getCoords = function(e) {
-    if (typeof e.touches !== 'undefined') {
+    if (typeof e.touches !== 'undefined' && e.touches.length) {
       return {
         x: e.touches[0].clientX,
         y: e.touches[0].clientY
